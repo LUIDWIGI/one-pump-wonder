@@ -1,0 +1,27 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"1.64938",
+   "Default View_TopLeft":"-273,-20",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
+#  -string -flagsOSRD
+preplace port port-id_ir -pg 1 -lvl 0 -x -210 -y 100 -defaultsOSRD
+preplace port port-id_reset -pg 1 -lvl 0 -x -210 -y 360 -defaultsOSRD
+preplace port port-id_sysClk -pg 1 -lvl 0 -x -210 -y 10 -defaultsOSRD
+preplace portBus irCountAmmount -pg 1 -lvl 4 -x 760 -y 210 -defaultsOSRD
+preplace inst reggieTheRegister_0 -pg 1 -lvl 3 -x 590 -y 210 -defaultsOSRD
+preplace inst irCount_0 -pg 1 -lvl 2 -x 310 -y 180 -defaultsOSRD
+preplace inst clock_0 -pg 1 -lvl 1 -x 70 -y 350 -defaultsOSRD
+preplace netloc clock_0_outClk 1 1 2 170 80 440
+preplace netloc irCount_0_countOut 1 2 1 N 180
+preplace netloc ir_1 1 0 2 NJ 100 180
+preplace netloc reggieTheRegister_0_reggieOut 1 3 1 N 210
+preplace netloc reset_1 1 0 3 -180J 270 180J 270 440
+preplace netloc sysClk_1 1 0 3 -190 90 190 90 430
+levelinfo -pg 1 -210 70 310 590 760
+pagesize -pg 1 -db -bbox -sgen -300 -260 950 710
+"
+}
+{
+   "da_clkrst_cnt":"2"
+}

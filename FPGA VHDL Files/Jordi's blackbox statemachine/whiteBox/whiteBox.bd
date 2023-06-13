@@ -1,0 +1,188 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xBEC408B421BD07A0",
+      "device": "xc7z020clg400-1",
+      "gen_directory": "../../../../whiteBox.gen/sources_1/bd/whiteBox",
+      "name": "whiteBox",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2022.2"
+    },
+    "design_tree": {
+      "reggieTheRegister_0": "",
+      "irCount_0": "",
+      "clock_0": ""
+    },
+    "ports": {
+      "ir": {
+        "type": "data",
+        "direction": "I"
+      },
+      "reset": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "POLARITY": {
+            "value": "ACTIVE_HIGH"
+          }
+        }
+      },
+      "irCountAmmount": {
+        "type": "data",
+        "direction": "O",
+        "left": "3",
+        "right": "0"
+      },
+      "sysClk": {
+        "direction": "I"
+      }
+    },
+    "components": {
+      "reggieTheRegister_0": {
+        "vlnv": "xilinx.com:module_ref:reggieTheRegister:1.0",
+        "xci_name": "whiteBox_reggieTheRegister_0_0",
+        "xci_path": "ip\\whiteBox_reggieTheRegister_0_0\\whiteBox_reggieTheRegister_0_0.xci",
+        "inst_hier_path": "reggieTheRegister_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "reggieTheRegister",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "reggieIn": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "reggieOut": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "activate": {
+            "direction": "I"
+          },
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "reset",
+                "value_src": "constant"
+              }
+            }
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          }
+        }
+      },
+      "irCount_0": {
+        "vlnv": "xilinx.com:module_ref:irCount:1.0",
+        "xci_name": "whiteBox_irCount_0_0",
+        "xci_path": "ip\\whiteBox_irCount_0_0\\whiteBox_irCount_0_0.xci",
+        "inst_hier_path": "irCount_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "irCount",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "ir": {
+            "direction": "I"
+          },
+          "countOut": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "reset",
+                "value_src": "constant"
+              }
+            }
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "clear": {
+            "direction": "I"
+          }
+        }
+      },
+      "clock_0": {
+        "vlnv": "xilinx.com:module_ref:clock:1.0",
+        "xci_name": "whiteBox_clock_0_0",
+        "xci_path": "ip\\whiteBox_clock_0_0\\whiteBox_clock_0_0.xci",
+        "inst_hier_path": "clock_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "clock",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "sysClk": {
+            "direction": "I"
+          },
+          "outClk": {
+            "direction": "O"
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          }
+        }
+      }
+    },
+    "nets": {
+      "clock_0_outClk": {
+        "ports": [
+          "clock_0/outClk",
+          "reggieTheRegister_0/activate",
+          "irCount_0/clear"
+        ]
+      },
+      "irCount_0_countOut": {
+        "ports": [
+          "irCount_0/countOut",
+          "reggieTheRegister_0/reggieIn"
+        ]
+      },
+      "ir_1": {
+        "ports": [
+          "ir",
+          "irCount_0/ir"
+        ]
+      },
+      "reggieTheRegister_0_reggieOut": {
+        "ports": [
+          "reggieTheRegister_0/reggieOut",
+          "irCountAmmount"
+        ]
+      },
+      "reset_1": {
+        "ports": [
+          "reset",
+          "reggieTheRegister_0/reset",
+          "irCount_0/reset",
+          "clock_0/reset"
+        ]
+      },
+      "sysClk_1": {
+        "ports": [
+          "sysClk",
+          "reggieTheRegister_0/clk",
+          "irCount_0/clk",
+          "clock_0/sysClk"
+        ]
+      }
+    }
+  }
+}
